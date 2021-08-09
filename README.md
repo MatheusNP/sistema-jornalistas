@@ -73,6 +73,28 @@ No terminal, deve ser executado o seguinte comando para criar as tabelas utiliza
     - **`->POST` `/api/type/delete/{type_id}`** (Exclui um tipo de notícia do jornalista)
     - **`->GET` `/api/type/me`** (Lista todos os tipos notícias do jornalista)
 
+### Rotas Extras
+
+Também está implementado no projeto um conjunto de rotas que seguem a padronização RESTFul, utilizando-se de vários verbos HTTP e melhores práticas para rotas:
+
+- **Jornalistas**
+    - **`POST` `/api/v1/register`** (rota para criação de novos jornalistas)
+    - **`POST` `/api/v1/login`** (rota para autenticação jornalistas)
+    - **`->GET` `/api/v1/me`** (rota que retorna os dados do jornalista, com sua senha ocultada)
+
+- **Notícias**
+    - **`->POST` `/api/v1/news/`** (Cria uma notícia)
+    - **`->PUT` `/api/v1/news/{news_id}`** (Altera uma notícia do jornalista)
+    - **`->DELETE` `/api/v1/news/{news_id}`** (Exclui uma notícia do jornalista)
+    - **`->GET` `/api/v1/news/me`** (Lista todas as notícias do jornalista)
+    - **`->GET` `/api/v1/news/me/type/{type_id}`** (Lista todas as notícias do jornalista por um tipo de notícia)
+
+- **Tipos de Notícias**
+    - **`->POST` `/api/v1/type/`** (Cria um novo tipo de notícia)
+    - **`->PUT` `/api/v1/type/{type_id}`** (Altera um tipo de notícia do jornalista)
+    - **`->DELETE` `/api/v1/type/{type_id}`** (Exclui um tipo de notícia do jornalista)
+    - **`->GET` `/api/v1/type/me`** (Lista todos os tipos notícias do jornalista)
+
 Observação: as rotas marcadas com '->' indicam que estas necessitam enviar no header da requisição a propriedade `Authorization`, com o valor `bearer %JWT_TOKEN%`, onde %JWT_TOKEN%  deve ser substituído pela token gerada na rota de LOGIN do jornalista.
 
 ## Algumas exceções implementadas
