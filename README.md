@@ -56,28 +56,6 @@ No terminal, deve ser executado o seguinte comando para criar as tabelas utiliza
 ## Rotas
 
 - **Jornalistas**
-    - **`POST` `/api/register`** (rota para criação de novos jornalistas)
-    - **`POST` `/api/login`** (rota para autenticação jornalistas)
-    - **`->POST` `/api/me`** (rota que retorna os dados do jornalista, com sua senha ocultada)
-
-- **Notícias**
-    - **`->POST` `/api/news/create`** (Cria uma notícia)
-    - **`->POST` `/api/news/update/{news_id}`** (Altera uma notícia do jornalista)
-    - **`->POST` `/api/news/delete/{news_id}`** (Exclui uma notícia do jornalista)
-    - **`->GET` `/api/news/me`** (Lista todas as notícias do jornalista)
-    - **`->GET` `/api/news/type/{type_id}`** (Lista todas as notícias do jornalista por um tipo de notícia)
-
-- **Tipos de Notícias**
-    - **`->POST` `/api/type/create`** (Cria um novo tipo de notícia)
-    - **`->POST` `/api/type/update/{type_id}`** (Altera um tipo de notícia do jornalista)
-    - **`->POST` `/api/type/delete/{type_id}`** (Exclui um tipo de notícia do jornalista)
-    - **`->GET` `/api/type/me`** (Lista todos os tipos notícias do jornalista)
-
-### Rotas Extras
-
-Também está implementado no projeto um conjunto de rotas que seguem a padronização RESTFul, utilizando-se de vários verbos HTTP e melhores práticas para rotas:
-
-- **Jornalistas**
     - **`POST` `/api/v1/register`** (rota para criação de novos jornalistas)
     - **`POST` `/api/v1/login`** (rota para autenticação jornalistas)
     - **`->GET` `/api/v1/me`** (rota que retorna os dados do jornalista, com sua senha ocultada)
